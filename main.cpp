@@ -13,8 +13,8 @@
 std::vector<int> generatePermutation(int n);
 
 int main() {
-    constexpr int N = 64000;
-    constexpr int RUNS = 8;
+    constexpr int N = 1000;
+    constexpr int RUNS = 1024;
     double cumulativeTime = 0;
     for (int i = 0; i < RUNS; i++) {
         std::vector<int> permutation = generatePermutation(N);
