@@ -22,8 +22,8 @@ int main() {
         insertionSort(permutation);
         cumulativeTime += stopTimer();
     }
-    std::cout << "Average time for insertion sort of size: " << N << std::endl
-    << "And over " << RUNS << " runs: " << cumulativeTime / RUNS << std::endl;
+    std::cout << "Insertion sort of size: " << N << std::endl
+    << "Average time over " << RUNS << " runs: " << cumulativeTime / RUNS << std::endl;
 
     for (int i = 0; i < RUNS; i++) {
         std::vector<int> permutation = generatePermutation(N);
@@ -31,8 +31,8 @@ int main() {
         selectionSort(permutation);
         cumulativeTime += stopTimer();
     }
-    std::cout << "Average time for selection sort of size: " << N << std::endl
-    << "And over " << RUNS << " runs: " << cumulativeTime / RUNS << std::endl;
+    std::cout << "Selection sort of size: " << N << std::endl
+    << "Average time over " << RUNS << " runs: " << cumulativeTime / RUNS << std::endl;
 
 }
 
