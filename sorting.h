@@ -36,3 +36,22 @@ inline void insertionSort(std::vector<int>& arr) {
         arr[j + 1] = key;
     }
 }
+
+template <typename T>
+void Swap(T& a, T& b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+template <typename T>
+void bubbleSort(std::vector<T>& arr) {
+    const int n = arr.size();
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                Swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+}

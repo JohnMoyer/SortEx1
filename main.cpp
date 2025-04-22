@@ -13,26 +13,36 @@
 std::vector<int> generatePermutation(int n);
 
 int main() {
-    constexpr int N = 1000;
-    constexpr int RUNS = 1024;
+    constexpr int N = 102260;
+    constexpr int RUNS = 1;
     double cumulativeTime = 0;
-    for (int i = 0; i < RUNS; i++) {
-        std::vector<int> permutation = generatePermutation(N);
-        startTimer();
-        insertionSort(permutation);
-        cumulativeTime += stopTimer();
-    }
-    std::cout << "Insertion sort of size: " << N << std::endl
-    << "Average time over " << RUNS << " runs: " << cumulativeTime / RUNS << std::endl;
 
     for (int i = 0; i < RUNS; i++) {
         std::vector<int> permutation = generatePermutation(N);
         startTimer();
-        selectionSort(permutation);
+        bubbleSort(permutation);
         cumulativeTime += stopTimer();
     }
-    std::cout << "Selection sort of size: " << N << std::endl
-    << "Average time over " << RUNS << " runs: " << cumulativeTime / RUNS << std::endl;
+    std::cout << "Bubble sort of size: " << N << std::endl
+    << "Average time over " << RUNS << " runs: " << cumulativeTime / RUNS << std::endl
+     << "Total time: " << cumulativeTime << std::endl;
+    // for (int i = 0; i < RUNS; i++) {
+    //     std::vector<int> permutation = generatePermutation(N);
+    //     startTimer();
+    //     insertionSort(permutation);
+    //     cumulativeTime += stopTimer();
+    // }
+    // std::cout << "Insertion sort of size: " << N << std::endl
+    // << "Average time over " << RUNS << " runs: " << cumulativeTime / RUNS << std::endl;
+    //
+    // for (int i = 0; i < RUNS; i++) {
+    //     std::vector<int> permutation = generatePermutation(N);
+    //     startTimer();
+    //     selectionSort(permutation);
+    //     cumulativeTime += stopTimer();
+    // }
+    // std::cout << "Selection sort of size: " << N << std::endl
+    // << "Average time over " << RUNS << " runs: " << cumulativeTime / RUNS << std::endl;
 
 }
 
